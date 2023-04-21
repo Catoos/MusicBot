@@ -1,17 +1,19 @@
-const fs = require('fs');
+// const fs = require('fs');
 
-module.exports = (client, Discord) => {
-    const load_dir = (dirs) => {
-        const event_files = fs.readdirSync(`./events/${dirs}`).filter(file => file.endsWith('.js'));
+// module.exports = (client, Discord) => {
+//     const load_dir = (dirs) => {
+//         const commandsPath = path.join(__dirname, 'commands');
+//         const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 
-        for(const file of event_files){
-            const event = require(`../events/${dirs}/${file}`);
-            const event_name = file.split('.')[0];
-            client.on(event_name, event.bind(null, client, Discord));
-        }
-    }
+//         for(const file of event_files){
+//             const filePath = path.join(commandsPath, file);
+//             const command = require(filePath);
+            
+//             if ('data' in command && 'execute' in command) {
+//                 client.commands.set(command.data.name, command);
+//             } else {
+//                 console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
+//         }
+//     }
 
-    ['client', 'guild'].forEach(e => load_dir(e));
-
-
-}
+//     }}
