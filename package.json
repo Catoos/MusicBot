@@ -20,7 +20,7 @@
     "node": "^19.8.1",
     "node-opus": "^0.3.3",
     "yt-search": "^2.10.3",
-    "ytdl-core": "^4.11.4"
+    "ytdl-core": "^4.11.5"
   },
   "repository": {
     "type": "git",

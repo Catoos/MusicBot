@@ -1,12 +1,16 @@
+const { SlashCommandBuilder } = require('discord.js');
+const { getVoiceConnection } = require('@discordjs/voice');
+
 module.exports = {
-    name: 'leave',
-    description: 'stop the bot and leave the channel',
-    async execute(client, message, args) {
-        const voiceChannel = message.member.voice.channel;
+    data: new SlashCommandBuilder()
+    .setName('leave')
+    .setDescription( `I'll leave the channel`),
+
+    async execute(interaction) {
+		await interaction.reply('See ya!');
+        const connection = getVoiceConnection(interaction.guild.id);
+        connection.destroy();
  
-        if(!voiceChannel) return message.channel.send("You need to be in a voice channel to stop the music!");
-        await voiceChannel.leave();
-        await message.channel.send('Leaving channel :smiling_face_with_tear:')
  
     }
 }

@@ -55,35 +55,5 @@ module.exports = {
 
     player.play(resource, {seek: 0, volume: 0.5});
 
-   
-   /* Shoutout to the absolute chad on Github that found a fix for the
-    Discord API causing an autopause - fixes song not finishing */
-    // const networkStateChangeHandler = (oldNetworkState, newNetworkState) => {
-    //     const newUdp = Reflect.get(newNetworkState, 'udp');
-    //     clearInterval(newUdp?.keepAliveInterval);
-    //   }
-    //   connection.on('stateChange', (oldState, newState) => {
-    //     Reflect.get(oldState, 'networking')?.off('stateChange', networkStateChangeHandler);
-    //     Reflect.get(newState, 'networking')?.on('stateChange', networkStateChangeHandler);
-    //   });
-    // await song_queue.text_channel.send(`NOW PLAYING **${song.title}**`);
-
-// }
-
-//Function to skip the song
-// const skip_song = (message, server_queue) => {
-//     if(!message.member.voice.channel) return message.channel.send('Cant do that from there silly');
-//     if(!server_queue){
-//         return message.channel.send('Dis bitch empty... YEET');
-//     }
-//     server_queue.connections.dispatcher.end(); //add a try catch block
-// }
-
-// //Function to stop the bot
-// const stop_song = (message, server_queue) => {
-//     if(!message.member.voice.channel) return message.channel.send('Cant do that from there silly');
-//     server_queue.songs = [];
-//     server_queue.connections.dispatcher.end();
-// }
     }
 }
